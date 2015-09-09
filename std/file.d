@@ -453,7 +453,7 @@ void write(R)(R name, const void[] buffer)
 }
 
 /*********************************************
-Appends $(D buffer) to file $(D name).
+Appends $(D buffer) to file $(D name). A new file will be created if it does not exist.
 
 Params:
     name = string or range of characters representing the file _name
