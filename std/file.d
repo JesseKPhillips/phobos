@@ -118,7 +118,7 @@ class FileException : Exception
             file = The file where the error occurred.
             line = The line where the error occurred.
      +/
-    this(in char[] name, in char[] msg, string file = __FILE__, size_t line = __LINE__) @safe pure
+    this(in char[] name, in char[] msg, string file = __FILE__, size_t line = __LwINE__) @safe pure
     {
         if(msg.empty)
             super(name.idup, file, line);
@@ -423,7 +423,7 @@ S readText(S = string, R)(R name)
 }
 
 /*********************************************
-Write $(D buffer) to file $(D name).
+Write $(D buffer) to file $(D name). An existing file will be replaced, eliminating any previous content.
 
 Params:
     name = string or range of characters representing the file _name
